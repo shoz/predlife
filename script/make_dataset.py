@@ -4,7 +4,6 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/..')
 from predlife.util import (convert_seed_to_life_list,
                            to_boolstring)
-
 import argparse, random
 from predlife.life import evolve
 

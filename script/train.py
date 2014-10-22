@@ -18,7 +18,7 @@ def main():
         input = [int(c) for c in lines[i].rstrip().split('\t')[1]]
         output = [int(c) for c in lines[i+1].rstrip().split('\t')[1]]
         dataset.append((input, output))
-    trained_network = trainer.train(dataset)
+    trained_network = trainer.train(10, dataset)
     with open(args.output, 'w+') as f:
         pickle.dump(trained_network, f)
 
