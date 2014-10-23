@@ -9,6 +9,7 @@ from predlife import trainer
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', required=True)
 parser.add_argument('--output', required=True)
+parser.add_argument('--N', required=True, type=int)
 args = parser.parse_args()
 
 def main():
@@ -18,7 +19,7 @@ def main():
         input = [int(c) for c in lines[i].rstrip().split('\t')[1]]
         output = [int(c) for c in lines[i+1].rstrip().split('\t')[1]]
         dataset.append((input, output))
-    trained_network = trainer.train(10, dataset)
+    trained_network = trainer.train(args.N, dataset)
     with open(args.output, 'w+') as f:
         pickle.dump(trained_network, f)
 
