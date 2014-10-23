@@ -19,3 +19,11 @@ def calc_match_ratio(life1, life2):
         dist += math.sqrt((c1 - c2)**2)
     return 1.0 - dist/float(len(life1))
 
+def convert_float_to_boolstring(life):
+    ret = ''
+    for c in life:
+        if c >= 0.5:
+            ret += '1'
+        else:
+            ret += '0'
+    return ret
